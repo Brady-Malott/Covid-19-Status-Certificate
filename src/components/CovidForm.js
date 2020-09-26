@@ -68,6 +68,7 @@ const useStyles = makeStyles((theme) => ({
 const steps = ['Demographic Data', 'Symptom Data', 'Review Information'];
 
 function getStepContent(step) {
+
   switch (step) {
     case 0:
       return <FirstForm />;
