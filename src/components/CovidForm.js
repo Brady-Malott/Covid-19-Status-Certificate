@@ -63,7 +63,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const steps = ['Shipping address', 'Payment details', 'Review your order'];
+const steps = ['Demographic Data', 'Symptom Data', 'Review Information'];
 
 function getStepContent(step) {
   switch (step) {
@@ -71,6 +71,10 @@ function getStepContent(step) {
       return <FirstForm />;
     case 1:
       return <SecondForm />;
+    case 2:
+      return <ThirdForm />;
+    case 3:
+      return <FourthFormCertificate />;
     default:
       throw new Error('Unknown step');
   }
