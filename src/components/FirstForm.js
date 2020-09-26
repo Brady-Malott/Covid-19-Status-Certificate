@@ -10,7 +10,9 @@ import Checkbox from '@material-ui/core/Checkbox';
 
 export default function FirstForm() {
 
-  const [workValue, setWorkValue] = useState('0');
+  // const handleChangeTest = (e) => {
+  //   return handleChange;
+  // };
 
   return (
     <React.Fragment>
@@ -20,7 +22,7 @@ export default function FirstForm() {
       <Grid container spacing={3}>
         <Grid item xs={12} sm={6}>
           <InputLabel id="work-sector">Work Sector</InputLabel>
-          <Select labelId="work-sector" id="work-select" value={workValue} fullWidth onChange={(e) => setWorkValue(e.target.value)}>
+          <Select labelId="work-sector" id="work-select" fullWidth>
             <MenuItem value="1">Health care and social assistance</MenuItem>
             <MenuItem value="2">Educational services</MenuItem>
             <MenuItem value="3">Accommodation and food services</MenuItem>

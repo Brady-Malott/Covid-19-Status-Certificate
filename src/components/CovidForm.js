@@ -73,7 +73,11 @@ function getStepContent(step) {
 
   switch (step) {
     case 0:
-      return <FirstForm />;
+      return (
+        <FirstForm 
+        handleChange
+        />
+      );
     case 1:
       return <SecondForm />;
     case 2:
@@ -86,6 +90,14 @@ function getStepContent(step) {
 export default function Checkout() {
   const classes = useStyles();
   const [activeStep, setActiveStep] = React.useState(0);
+
+  const userData = {
+    step: activeStep,
+    workSector: '',
+    age: '',
+    gender: '',
+    race: ''
+  }
 
   const handleNext = () => {
     setActiveStep(activeStep + 1);
@@ -107,9 +119,16 @@ export default function Checkout() {
     setActiveStep(activeStep - 1);
   };
 
+  // Change values in userData when a change happens on any form
+  const handleChange = input => e => {
+    
+  }
+
   return (
     <React.Fragment>
       <CssBaseline />
+
+      {/* Header */}
       <AppBar position="absolute" color="default" className={classes.appBar}>
         <Toolbar>
           <Typography variant="h6" color="inherit" noWrap>
@@ -117,11 +136,17 @@ export default function Checkout() {
           </Typography>
         </Toolbar>
       </AppBar>
+
+      {/* Form Card */}
       <main className={classes.layout}>
         <Paper className={classes.paper}>
+
+          {/* Form Title */}
           <Typography component="h1" variant="h4" align="center">
-            Checkout
+            Get Your Covid-19 Certificate
           </Typography>
+
+          {/* Step display (top of the card) */}
           <Stepper activeStep={activeStep} className={classes.stepper}>
             {steps.map((label) => (
               <Step key={label}>
@@ -129,6 +154,8 @@ export default function Checkout() {
               </Step>
             ))}
           </Stepper>
+
+          {/* Insert a certificate or a form page based on the step */}
           <React.Fragment>
             {activeStep === steps.length ? (
               <React.Fragment>
