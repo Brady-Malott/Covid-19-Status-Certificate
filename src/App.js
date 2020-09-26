@@ -18,10 +18,6 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-
-// Firebase SDK
-
-
 firebase.initializeApp({
   apiKey: "AIzaSyCLY6epj2T1jCDk_c9iO4JySrjvg8ctg6o",
   authDomain: "covid-dashboard-e6fac.firebaseapp.com",
