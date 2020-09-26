@@ -13,7 +13,6 @@ import Typography from '@material-ui/core/Typography';
 import FirstForm from './FirstForm';
 import SecondForm from './SecondForm';
 import ThirdForm from './ThirdForm';
-import FourthFormCertificate from './FourthFormCertificate';
 
 function Copyright() {
   return (
@@ -65,7 +64,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const steps = ['Demographic Data', 'Symptom Data', 'Review Information', 'Certificate'];
+const steps = ['Demographic Data', 'Symptom Data', 'Review Information'];
 
 function getStepContent(step) {
   switch (step) {
@@ -75,8 +74,6 @@ function getStepContent(step) {
       return <SecondForm />;
     case 2:
       return <ThirdForm />;
-    case 3:
-      return <FourthFormCertificate />;
     default:
       throw new Error('Unknown step');
   }
@@ -142,7 +139,7 @@ export default function Checkout() {
                     onClick={handleNext}
                     className={classes.button}
                   >
-                    {activeStep === steps.length - 1 ? 'Place order' : 'Next'}
+                    {activeStep === steps.length - 1 ? 'Generate Certificate' : 'Next'}
                   </Button>
                 </div>
               </React.Fragment>
