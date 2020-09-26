@@ -1,4 +1,4 @@
-#COVID 19 Status Cerificate
+# COVID 19 Status Cerificate
 
 Made for Borderhacks 2020
 
