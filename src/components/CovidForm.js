@@ -63,7 +63,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const steps = ['Demographic Data', 'Symptom Data', 'Review Information'];
+const steps = ['Demographic Data', 'Symptom Data', 'Review Information', 'Certificate'];
 
 function getStepContent(step) {
   switch (step) {
