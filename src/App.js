@@ -35,11 +35,29 @@ function App() {
         
       </header>
 
-      <main className="container App-main">
-        <p>Welcome to the site</p>
-      </main>
+      <section>
+        {user ? <h1>Hello</h1> : <SignIn />}
+      </section>
     </div>
   );
+}
+
+function SignIn() {
+
+  const signInWithGoogle = () => {
+    const provider = new firebase.auth.GoogleAuthProvider();
+    auth.signInWithPopup(provider);
+  }
+
+  return (
+    <button onClick={signInWithGoogle}>Sign in with Google</button>
+  )
+}
+
+function SignOut() {
+  return auth.currentUser && (
+    <button class={`sign-out ${auth.currentUser ? 'show' : 'hide'}`} onClick={() => auth.signOut()}>Sign Out</button>
+  )
 }
 
 export default App;

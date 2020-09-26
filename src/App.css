@@ -21,14 +21,3 @@ body {
 .App-header {
   background: #f4f4f4;
 }
-
-.navbar {
-  background: #f4f4f4;
-  display: flex;
-  align-items: center;
-  height: 100px;
-}
-
-.logo {
-  
-}
