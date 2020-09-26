@@ -13,6 +13,7 @@ import Typography from '@material-ui/core/Typography';
 import FirstForm from './FirstForm';
 import SecondForm from './SecondForm';
 import ThirdForm from './ThirdForm';
+import Certificate from './Certificate';
 
 function Copyright() {
   return (
@@ -116,13 +117,7 @@ export default function Checkout() {
           <React.Fragment>
             {activeStep === steps.length ? (
               <React.Fragment>
-                <Typography variant="h5" gutterBottom>
-                  Thank you for your order.
-                </Typography>
-                <Typography variant="subtitle1">
-                  Your order number is #2001539. We have emailed your order confirmation, and will
-                  send you an update when your order has shipped.
-                </Typography>
+                <Certificate />
               </React.Fragment>
             ) : (
               <React.Fragment>
