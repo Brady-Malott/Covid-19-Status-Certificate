@@ -12,6 +12,8 @@ import Link from '@material-ui/core/Link';
 import Typography from '@material-ui/core/Typography';
 import FirstForm from './FirstForm';
 import SecondForm from './SecondForm';
+import ThirdForm from './ThirdForm';
+import FourthFormCertificate from './FourthFormCertificate';
 
 function Copyright() {
   return (
