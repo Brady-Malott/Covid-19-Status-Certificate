@@ -21,3 +21,10 @@ body {
 .App-header {
   background: #f4f4f4;
 }
+
+#signInButton {
+  margin:auto;
+  display:block;
+  background: #4285F4;
+  color: #FFFFFF;
+}
