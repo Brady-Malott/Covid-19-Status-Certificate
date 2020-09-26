@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
-
-// Firebase SDK
+import Button from '@material-ui/core/Button';
+import { makeStyles } from '@material-ui/core/styles';
 import firebase from 'firebase/app';
 import 'firebase/firestore';
 import 'firebase/auth';
@@ -9,6 +9,18 @@ import 'firebase/auth';
 // React-Firebase hooks
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useCollectionData } from 'react-firebase-hooks/firestore';
+
+const useStyles = makeStyles((theme) => ({
+  root: {
+    '& > *': {
+      margin: theme.spacing(1),
+    },
+  },
+}));
+
+
+// Firebase SDK
+
 
 firebase.initializeApp({
   apiKey: "AIzaSyCLY6epj2T1jCDk_c9iO4JySrjvg8ctg6o",
@@ -50,7 +62,7 @@ function SignIn() {
   }
 
   return (
-    <button onClick={signInWithGoogle}>Sign in with Google</button>
+    <Button onClick={signInWithGoogle}>Sign in with Google</Button>
   )
 }
 
