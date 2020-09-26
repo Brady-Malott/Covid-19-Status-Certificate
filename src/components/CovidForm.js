@@ -15,6 +15,8 @@ import SecondForm from './SecondForm';
 import ThirdForm from './ThirdForm';
 import Certificate from './Certificate';
 
+import {auth, firestore, firebase} from '../firebase.js';
+
 function Copyright() {
   return (
     <Typography variant="body2" color="textSecondary" align="center">
@@ -86,6 +88,18 @@ export default function Checkout() {
 
   const handleNext = () => {
     setActiveStep(activeStep + 1);
+
+  firestore.collection("testCollection").doc("collection").set({
+    name: "Aryaman",
+    state: "ON",
+    country: "CA"
+  })
+  .then(function() {
+      console.log("Document successfully written!");
+  })
+  .catch(function(error) {
+      console.error("Error writing document: ", error);
+  });
   };
 
   const handleBack = () => {
