@@ -5,6 +5,9 @@ import { makeStyles } from '@material-ui/core/styles';
 import {auth, firestore, firebase} from './firebase.js';
 import CovidForm from './components/CovidForm';
 
+//If this is giving you an error, do yarn install <OR> yarn add @material-ui/icons
+import ExitToApp from '@material-ui/icons/ExitToApp';
+
 // React-Firebase hooks
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useCollectionData } from 'react-firebase-hooks/firestore';
@@ -42,7 +45,7 @@ function SignIn() {
   }
 
   return (
-    <Button onClick={signInWithGoogle}>Sign in with Google</Button>
+    <Button id="signInButton" onClick={signInWithGoogle}> <ExitToApp /> Sign in with Google</Button>
   )
 }
 
