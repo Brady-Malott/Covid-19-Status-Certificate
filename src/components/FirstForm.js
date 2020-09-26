@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 import TextField from '@material-ui/core/TextField';
@@ -10,23 +10,17 @@ import Checkbox from '@material-ui/core/Checkbox';
 
 export default function FirstForm() {
 
+  const [workValue, setWorkValue] = useState('0');
+
   return (
     <React.Fragment>
-      <Typography variant="h6" gutterBottom>
+      <Typography variant="h4" gutterBottom>
         Demographic Info
       </Typography>
       <Grid container spacing={3}>
         <Grid item xs={12} sm={6}>
-          {/* <TextField
-            required
-            id="work-sector"
-            name="work-sector"
-            label="First name"
-            fullWidth
-            autoComplete="given-name"
-          /> */}
           <InputLabel id="work-sector">Work Sector</InputLabel>
-          <Select labelId="work-sector" id="work-select" fullWidth>
+          <Select labelId="work-sector" id="work-select" value={workValue} fullWidth onChange={(e) => setWorkValue(e.target.value)}>
             <MenuItem value="1">Health care and social assistance</MenuItem>
             <MenuItem value="2">Educational services</MenuItem>
             <MenuItem value="3">Accommodation and food services</MenuItem>
@@ -38,13 +32,12 @@ export default function FirstForm() {
           </Select>
         </Grid>
         <Grid item xs={12} sm={6}>
+          <InputLabel id="age">Age</InputLabel>
           <TextField
             required
-            id="age"
+            labelId="age"
             name="age"
-            label="Age"
             fullWidth
-            autoComplete="Age"
             type="number"
           />
         </Grid>
@@ -64,7 +57,7 @@ export default function FirstForm() {
             <MenuItem value="3">Filipino</MenuItem>
             <MenuItem value="4">Chinese</MenuItem>
             <MenuItem value="5">Black</MenuItem>
-            <MenuItem value="6">Black</MenuItem>
+            <MenuItem value="6">Other</MenuItem>
           </Select>
         </Grid>
       </Grid>

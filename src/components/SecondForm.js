@@ -2,64 +2,50 @@ import React from 'react';
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 import TextField from '@material-ui/core/TextField';
+import InputLabel from '@material-ui/core/InputLabel';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Checkbox from '@material-ui/core/Checkbox';
 
 export default function SecondForm() {
   return (
     <React.Fragment>
-      <Typography variant="h6" gutterBottom>
-        Shipping address
+      <Typography variant="h4" gutterBottom>
+        Symptom Info
       </Typography>
-      <Grid container spacing={3}>
-        <Grid item xs={12} sm={6}>
-          <TextField
-            required
-            id="firstName"
-            name="firstName"
-            label="First name"
-            fullWidth
-            autoComplete="given-name"
+      <Typography variant="h6" gutterBottom>
+        In the past 14 days, have you:
+      </Typography>
+      <Grid container spacing={1}>
+        <Grid item xs={12}>
+          <Checkbox
+            color="primary"
           />
-        </Grid>
-        <Grid item xs={12} sm={6}>
-          <TextField
-            required
-            id="lastName"
-            name="lastName"
-            label="Last name"
-            fullWidth
-            autoComplete="family-name"
-          />
+          <p style={{display: "inline"}}>provided care to someone diagnosed with COVID-19</p>
         </Grid>
         <Grid item xs={12}>
-          <TextField
-            required
-            id="address1"
-            name="address1"
-            label="Address line 1"
-            fullWidth
-            autoComplete="shipping address-line1"
+          <Checkbox
+            color="primary"
           />
+          <p style={{display: "inline"}}>learned that  a close contact has received a positive COVID-19 test</p>
         </Grid>
         <Grid item xs={12}>
-          <TextField
-            id="address2"
-            name="address2"
-            label="Address line 2"
-            fullWidth
-            autoComplete="shipping address-line2"
+          <Checkbox
+            color="primary"
           />
+          <p style={{display: "inline"}}>been in contact with a known carrier of COVID-19</p>
         </Grid>
-        <Grid item xs={12} sm={6}>
-          <TextField
-            required
-            id="city"
-            name="city"
-            label="City"
-            fullWidth
-            autoComplete="shipping address-level2"
+        <Grid item xs={12}>
+          <Checkbox
+            color="primary"
           />
+          <p style={{display: "inline"}}>engaged in any travel outside of Windsor-Essex</p>
+        </Grid>
+        <Grid item xs={12}>
+          <Checkbox
+            color="primary"
+          />
+          <p style={{display: "inline"}}>congregated in groups of 15 or more people</p>
+          
         </Grid>
         <Grid item xs={12} sm={6}>
           <TextField id="state" name="state" label="State/Province/Region" fullWidth />
