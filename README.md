@@ -1,3 +1,13 @@
+#COVID 19 Status Cerificate
+
+Made for Borderhacks 2020
+
+Made By:
+ - Brady Malott
+ - Ekjot Multani
+ - Abhishek Naidu
+ - Aryaman Singh
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
