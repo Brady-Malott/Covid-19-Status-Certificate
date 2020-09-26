@@ -4,6 +4,7 @@ import Button from '@material-ui/core/Button';
 import { makeStyles } from '@material-ui/core/styles';
 import {auth, firestore, firebase} from './firebase.js';
 import CovidForm from './components/CovidForm';
+import UserForm from './components_test/UserForm.js';
 
 //If this is giving you an error, do yarn install <OR> yarn add @material-ui/icons
 import ExitToApp from '@material-ui/icons/ExitToApp';
@@ -31,7 +32,7 @@ function App() {
       </header>
 
       <section>
-        {user ? <CovidForm /> : <SignIn />}
+        {user ? <UserForm /> : <SignIn />}
       </section>
     </div>
   );
