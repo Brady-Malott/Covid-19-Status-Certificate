@@ -1,4 +1,5 @@
 import React from 'react';
+import Grid from '@material-ui/core/Grid';
 import { makeStyles } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import AppBar from '@material-ui/core/AppBar';
@@ -65,19 +66,17 @@ const useStyles = makeStyles((theme) => ({
     marginTop: theme.spacing(3),
     marginLeft: theme.spacing(1),
   },
+  menuButton: {
+    marginRight: theme.spacing(2),
+  },
 }));
 
 const steps = ['Demographic Data', 'Symptom Data', 'Review Information'];
 
 function getStepContent(step) {
-
   switch (step) {
     case 0:
-      return (
-        <FirstForm 
-        handleChange
-        />
-      );
+      return <FirstForm />;
     case 1:
       return <SecondForm />;
     case 2:
@@ -90,14 +89,6 @@ function getStepContent(step) {
 export default function Checkout() {
   const classes = useStyles();
   const [activeStep, setActiveStep] = React.useState(0);
-
-  const userData = {
-    step: activeStep,
-    workSector: '',
-    age: '',
-    gender: '',
-    race: ''
-  }
 
   const handleNext = () => {
     setActiveStep(activeStep + 1);
@@ -119,34 +110,50 @@ export default function Checkout() {
     setActiveStep(activeStep - 1);
   };
 
-  // Change values in userData when a change happens on any form
-  const handleChange = input => e => {
-    
-  }
+  const generateNew = () => {
+    setActiveStep(0) // this is placeholder
+  };
+
+  const viewPastCerts = () => {
+    // we should bring up a list of previous certs here
+  };
 
   return (
     <React.Fragment>
       <CssBaseline />
-
-      {/* Header */}
-      <AppBar position="absolute" color="default" className={classes.appBar}>
-        <Toolbar>
-          <Typography variant="h6" color="inherit" noWrap>
-            Company name
-          </Typography>
-        </Toolbar>
-      </AppBar>
-
-      {/* Form Card */}
+        <AppBar position="absolute" color="default" className={classes.appBar}>
+          <Toolbar>
+            <Grid
+              justify="space-between"
+              container 
+              spacing={24}
+            >
+              <Grid item>
+                <Typography variant="h6" color="inherit" noWrap stye={{flexGrow: 1}} >
+                  Covid Status Certificate
+                </Typography>
+              </Grid>
+              <Grid item>
+                <div>
+                  <Button
+                    variant="contained"
+                    color="default"
+                    onClick={viewPastCerts}
+                    className={classes.menuButton}
+                    //transformOrigin={{horizontal: 'right'}}
+                  >
+                    Past Certificates
+                  </Button>
+                </div>
+              </Grid>
+            </Grid>
+          </Toolbar>
+        </AppBar>
       <main className={classes.layout}>
         <Paper className={classes.paper}>
-
-          {/* Form Title */}
           <Typography component="h1" variant="h4" align="center">
-            Get Your Covid-19 Certificate
+            Checkout
           </Typography>
-
-          {/* Step display (top of the card) */}
           <Stepper activeStep={activeStep} className={classes.stepper}>
             {steps.map((label) => (
               <Step key={label}>
@@ -154,12 +161,20 @@ export default function Checkout() {
               </Step>
             ))}
           </Stepper>
-
-          {/* Insert a certificate or a form page based on the step */}
           <React.Fragment>
             {activeStep === steps.length ? (
               <React.Fragment>
                 <Certificate />
+                <div className={classes.buttons}>
+                  <Button
+                    variant="contained"
+                    color="secondary"
+                    onClick={generateNew}
+                    className={classes.button}
+                  >
+                    Generate New Certificate
+                  </Button>
+                </div>
               </React.Fragment>
             ) : (
               <React.Fragment>
@@ -176,7 +191,7 @@ export default function Checkout() {
                     onClick={handleNext}
                     className={classes.button}
                   >
-                    {activeStep === steps.length - 1 ? 'Generate Certificate' : 'Next'}
+                    {activeStep === steps.length - 1 ? 'Finish' : 'Next'}
                   </Button>
                 </div>
               </React.Fragment>
