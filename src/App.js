@@ -34,6 +34,9 @@ function App() {
       <section>
         {user ? <UserForm /> : <SignIn />}
       </section>
+
+      {/* Test Logo */}
+      <img src={require('./covid_wallet_logo.png')} alt="logo" id="main_logo"/>
     </div>
   );
 }
