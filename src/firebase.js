@@ -8,19 +8,20 @@ import 'firebase/analytics';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useCollectionData } from 'react-firebase-hooks/firestore';
 
+// Firebase SDK
 firebase.initializeApp({
-  apiKey: "AIzaSyCwrOZns2JfapwvKtYZKMcH0CXUFauGq20",
-  authDomain: "superchat-c3503.firebaseapp.com",
-  databaseURL: "https://superchat-c3503.firebaseio.com",
-  projectId: "superchat-c3503",
-  storageBucket: "superchat-c3503.appspot.com",
-  messagingSenderId: "342278760079",
-  appId: "1:342278760079:web:10598c4a85faf313d672fa",
-  measurementId: "G-RGY57XPD7D"
-})
-
+    apiKey: "AIzaSyCLY6epj2T1jCDk_c9iO4JySrjvg8ctg6o",
+    authDomain: "covid-dashboard-e6fac.firebaseapp.com",
+    databaseURL: "https://covid-dashboard-e6fac.firebaseio.com",
+    projectId: "covid-dashboard-e6fac",
+    storageBucket: "covid-dashboard-e6fac.appspot.com",
+    messagingSenderId: "265499291442",
+    appId: "1:265499291442:web:495e39e7df2bc5f826712b",
+    measurementId: "G-37K20WH1G4"
+  })
+  
+// Reference SDK with global vars
 const auth = firebase.auth();
 const firestore = firebase.firestore();
-const analytics = firebase.analytics();
-
-export {auth, firestore, analytics};
+  
+export {auth, firestore, firebase};
