@@ -5,6 +5,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import firebase from 'firebase/app';
 import 'firebase/firestore';
 import 'firebase/auth';
+import CovidForm from './components/CovidForm';
 
 // React-Firebase hooks
 import { useAuthState } from 'react-firebase-hooks/auth';
@@ -17,6 +18,9 @@ const useStyles = makeStyles((theme) => ({
     },
   },
 }));
+
+// Firebase SDK
+
 
 firebase.initializeApp({
   apiKey: "AIzaSyCLY6epj2T1jCDk_c9iO4JySrjvg8ctg6o",
@@ -44,7 +48,7 @@ function App() {
       </header>
 
       <section>
-        {user ? <h1>Hello</h1> : <SignIn />}
+        {user ? <CovidForm /> : <SignIn />}
       </section>
     </div>
   );
