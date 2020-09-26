@@ -92,14 +92,32 @@ export default function Checkout() {
     setActiveStep(activeStep - 1);
   };
 
+  const generateNew = () => {
+    setActiveStep(0) // this is placeholder
+  };
+
+  const viewPastCerts = () => {
+    // we should bring up a list of previous certs here
+  };
+
   return (
     <React.Fragment>
       <CssBaseline />
       <AppBar position="absolute" color="default" className={classes.appBar}>
         <Toolbar>
           <Typography variant="h6" color="inherit" noWrap>
-            Company name
+            Covid Status Certificate
           </Typography>
+          <div className={classes.buttons}>
+            <Button
+              variant="contained"
+              color="default"
+              onClick={viewPastCerts}
+              className={classes.button}
+            >
+              Past Certificates
+            </Button>
+          </div>
         </Toolbar>
       </AppBar>
       <main className={classes.layout}>
@@ -118,6 +136,16 @@ export default function Checkout() {
             {activeStep === steps.length ? (
               <React.Fragment>
                 <Certificate />
+                <div className={classes.buttons}>
+                  <Button
+                    variant="contained"
+                    color="secondary"
+                    onClick={generateNew}
+                    className={classes.button}
+                  >
+                    Generate New Certificate
+                  </Button>
+                </div>
               </React.Fragment>
             ) : (
               <React.Fragment>
@@ -134,7 +162,7 @@ export default function Checkout() {
                     onClick={handleNext}
                     className={classes.button}
                   >
-                    {activeStep === steps.length - 1 ? 'Generate Certificate' : 'Next'}
+                    {activeStep === steps.length - 1 ? 'Finish' : 'Next'}
                   </Button>
                 </div>
               </React.Fragment>
