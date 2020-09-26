@@ -1,4 +1,5 @@
 import React from 'react';
+import Grid from '@material-ui/core/Grid';
 import { makeStyles } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import AppBar from '@material-ui/core/AppBar';
@@ -65,6 +66,9 @@ const useStyles = makeStyles((theme) => ({
     marginTop: theme.spacing(3),
     marginLeft: theme.spacing(1),
   },
+  menuButton: {
+    marginRight: theme.spacing(2),
+  },
 }));
 
 const steps = ['Demographic Data', 'Symptom Data', 'Review Information'];
@@ -117,23 +121,34 @@ export default function Checkout() {
   return (
     <React.Fragment>
       <CssBaseline />
-      <AppBar position="absolute" color="default" className={classes.appBar}>
-        <Toolbar>
-          <Typography variant="h6" color="inherit" noWrap>
-            Covid Status Certificate
-          </Typography>
-          <div className={classes.buttons}>
-            <Button
-              variant="contained"
-              color="default"
-              onClick={viewPastCerts}
-              className={classes.button}
+        <AppBar position="absolute" color="default" className={classes.appBar}>
+          <Toolbar>
+            <Grid
+              justify="space-between"
+              container 
+              spacing={24}
             >
-              Past Certificates
-            </Button>
-          </div>
-        </Toolbar>
-      </AppBar>
+              <Grid item>
+                <Typography variant="h6" color="inherit" noWrap stye={{flexGrow: 1}} >
+                  Covid Status Certificate
+                </Typography>
+              </Grid>
+              <Grid item>
+                <div>
+                  <Button
+                    variant="contained"
+                    color="default"
+                    onClick={viewPastCerts}
+                    className={classes.menuButton}
+                    //transformOrigin={{horizontal: 'right'}}
+                  >
+                    Past Certificates
+                  </Button>
+                </div>
+              </Grid>
+            </Grid>
+          </Toolbar>
+        </AppBar>
       <main className={classes.layout}>
         <Paper className={classes.paper}>
           <Typography component="h1" variant="h4" align="center">
