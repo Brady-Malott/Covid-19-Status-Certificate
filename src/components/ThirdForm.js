@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { ThemeProvider as MuiThemeProvider } from '@material-ui/core/styles';
+// import { ThemeProvider as MuiThemeProvider } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 import Grid from '@material-ui/core/Grid';
@@ -27,7 +27,7 @@ export class ThirdForm extends Component {
     const severities = ['none', 'moderate', 'severe'];
 
     return (
-      <MuiThemeProvider>
+      // <MuiThemeProvider>
         <div className="container mt-2">
           <Typography variant="h4" gutterBottom>
             Symptom Info
@@ -47,7 +47,6 @@ export class ThirdForm extends Component {
             <Grid item xs={12} sm={6}>
               <InputLabel id="required-hospitalization">Did you require hospitalization for any Covid-19 Symptoms?</InputLabel>
               <Select
-                labelId="required-hospitalization"
                 id="status-select"
                 fullWidth
                 onChange={handleChange('requiredHospitalization')}
@@ -87,7 +86,6 @@ export class ThirdForm extends Component {
             <Grid item xs={12} sm={6}>
               <InputLabel id="dry-cough">Dry cough</InputLabel>
               <Select
-                labelId="dry-cough"
                 fullWidth
                 onChange={handleChange('q2_1')}
                 value={values.q2_1}
@@ -100,7 +98,6 @@ export class ThirdForm extends Component {
             <Grid item xs={12} sm={6}>
               <InputLabel id="temperature">Temperature over 38 &deg;C</InputLabel>
               <Select
-                labelId="temperature"
                 fullWidth
                 onChange={handleChange('q2_2')}
                 value={values.q2_2}
@@ -113,7 +110,6 @@ export class ThirdForm extends Component {
             <Grid item xs={12} sm={6}>
               <InputLabel id="loss-taste-smell">Loss of taste or smell</InputLabel>
               <Select
-                labelId="loss-taste-smell"
                 fullWidth
                 onChange={handleChange('q2_3')}
                 value={values.q2_3}
@@ -126,7 +122,6 @@ export class ThirdForm extends Component {
             <Grid item xs={12} sm={6}>
               <InputLabel id="fatigue">Fatigue, or feeling "under the weather"</InputLabel>
               <Select
-                labelId="fatigue"
                 fullWidth
                 onChange={handleChange('q2_4')}
                 value={values.q2_4}
@@ -139,7 +134,6 @@ export class ThirdForm extends Component {
             <Grid item xs={12} sm={6}>
               <InputLabel id="chills">Having the chills</InputLabel>
               <Select
-                labelId="chills"
                 fullWidth
                 onChange={handleChange('q2_5')}
                 value={values.q2_5}
@@ -152,7 +146,6 @@ export class ThirdForm extends Component {
             <Grid item xs={12} sm={6}>
               <InputLabel id="difficulty-breathing">Difficulty breathing, wheezing, or shortness of breath</InputLabel>
               <Select
-                labelId="difficulty-breathing"
                 fullWidth
                 onChange={handleChange('q2_6')}
                 value={values.q2_6}
@@ -165,7 +158,6 @@ export class ThirdForm extends Component {
             <Grid item xs={12} sm={6}>
               <InputLabel id="headaches">Headaches</InputLabel>
               <Select
-                labelId="headaches"
                 fullWidth
                 onChange={handleChange('q2_7')}
                 value={values.q2_7}
@@ -178,7 +170,6 @@ export class ThirdForm extends Component {
             <Grid item xs={12} sm={6}>
               <InputLabel id="joint-muscle-pain">Joint / Muscle Pain</InputLabel>
               <Select
-                labelId="joint-muscle-pain"
                 fullWidth
                 onChange={handleChange('q2_8')}
                 value={values.q2_8}
@@ -191,7 +182,6 @@ export class ThirdForm extends Component {
             <Grid item xs={12} sm={6}>
               <InputLabel id="abdominal-pain">Abdominal Pain or Digestive Issues</InputLabel>
               <Select
-                labelId="abdominal-pain"
                 fullWidth
                 onChange={handleChange('q2_9')}
                 value={values.q2_9}
@@ -204,7 +194,6 @@ export class ThirdForm extends Component {
             <Grid item xs={12} sm={6}>
               <InputLabel id="sore-throat">Sore Throat</InputLabel>
               <Select
-                labelId="sore-throat"
                 fullWidth
                 onChange={handleChange('q2_10')}
                 value={values.q2_10}
@@ -217,7 +206,6 @@ export class ThirdForm extends Component {
             <Grid item xs={12} sm={6}>
               <InputLabel id="watery-eyes">Eyes runny or watery</InputLabel>
               <Select
-                labelId="watery-eyes"
                 fullWidth
                 onChange={handleChange('q2_11')}
                 value={values.q2_11}
@@ -241,7 +229,7 @@ export class ThirdForm extends Component {
             className="button-margin"
           >Continue</Button>
         </div>
-      </MuiThemeProvider>
+      // </MuiThemeProvider>
     );
   }
 }

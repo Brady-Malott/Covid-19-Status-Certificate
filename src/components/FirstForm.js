@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { ThemeProvider as MuiThemeProvider } from '@material-ui/core/styles';
+// import { ThemeProvider as MuiThemeProvider } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 import Select from "@material-ui/core/Select";
@@ -17,7 +17,7 @@ export class FirstForm extends Component {
   render() {
     const { values, handleChange } = this.props;
     return (
-      <MuiThemeProvider>
+      // <MuiThemeProvider>
         <div className="container mt-2">
           <Typography variant="h4" gutterBottom>
             Demographic Info
@@ -26,7 +26,6 @@ export class FirstForm extends Component {
             <Grid item xs={12} sm={6}>
               <InputLabel id="work-sector">Work Sector</InputLabel>
               <Select
-                labelId="work-sector"
                 id="work-select"
                 fullWidth
                 onChange={handleChange('workSector')}
@@ -46,7 +45,6 @@ export class FirstForm extends Component {
               <InputLabel id="age">Age</InputLabel>
               <TextField
                 required
-                labelId="age"
                 name="age"
                 fullWidth
                 type="number"
@@ -57,7 +55,6 @@ export class FirstForm extends Component {
             <Grid item xs={12} sm={6}>
               <InputLabel id="gender">Gender</InputLabel>
               <Select
-                labelId="gender"
                 id="gender-select"
                 fullWidth
                 onChange={handleChange('gender')}
@@ -71,7 +68,6 @@ export class FirstForm extends Component {
             <Grid item xs={12} sm={6}>
               <InputLabel id="race">Ethnic Background</InputLabel>
               <Select
-                labelId="race"
                 id="race-select"
                 fullWidth
                 onChange={handleChange('race')}
@@ -93,7 +89,7 @@ export class FirstForm extends Component {
               className="button-margin"
             >Continue</Button>
         </div>
-      </MuiThemeProvider>
+      // </MuiThemeProvider>
     );
   }
 }

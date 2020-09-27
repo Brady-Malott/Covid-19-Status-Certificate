@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { ThemeProvider as MuiThemeProvider } from '@material-ui/core/styles';
+// import { ThemeProvider as MuiThemeProvider } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 import Grid from '@material-ui/core/Grid';
@@ -24,7 +24,7 @@ export class SecondForm extends Component {
     const { values, handleChange } = this.props;
 
     return (
-      <MuiThemeProvider>
+      // <MuiThemeProvider>
         <div className="container mt-2">
           <Typography variant="h4" gutterBottom>
             Precautions and Test Results
@@ -89,7 +89,6 @@ export class SecondForm extends Component {
             <Grid item xs={12}>
               <InputLabel id="test-status">Please indicate your test results</InputLabel>
               <Select
-                labelId="test-status"
                 id="status-select"
                 fullWidth
                 onChange={handleChange('testResult')}
@@ -129,7 +128,7 @@ export class SecondForm extends Component {
             className="button-margin"
           >Continue</Button>
         </div>
-      </MuiThemeProvider>
+      // </MuiThemeProvider>
     );
   }
 }
