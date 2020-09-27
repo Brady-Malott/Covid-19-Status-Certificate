@@ -20,45 +20,6 @@ export class FirstForm extends Component {
     return (
       <MuiThemeProvider>
         <>
-          {/* <Dialog
-            open
-            fullWidth
-            maxWidth='sm'
-          >
-            <AppBar title="Enter User Details" />
-            <TextField
-              placeholder="Enter Your First Name"
-              label="First Name"
-              onChange={handleChange('firstName')}
-              defaultValue={values.firstName}
-              margin="normal"
-              fullWidth
-            />
-            <br />
-            <TextField
-              placeholder="Enter Your Last Name"
-              label="Last Name"
-              onChange={handleChange('lastName')}
-              defaultValue={values.lastName}
-              margin="normal"
-              fullWidth
-            />
-            <br />
-            <TextField
-              placeholder="Enter Your Email"
-              label="Email"
-              onChange={handleChange('email')}
-              defaultValue={values.email}
-              margin="normal"
-              fullWidth
-            />
-            <br />
-            <Button
-              color="primary"
-              variant="contained"
-              onClick={this.continue}
-            >Continue</Button>
-          </Dialog> */}
           <Grid container spacing={3} className="test">
             <Grid item xs={12} sm={6}>
               <InputLabel id="work-sector">Work Sector</InputLabel>

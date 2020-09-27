@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import {firestore} from '../firebase.js';
 import FirstForm from './FirstForm';
 import SecondForm from './SecondForm';
 import ThirdForm from './ThirdForm';
@@ -39,6 +40,18 @@ export class UserForm extends Component {
     const { step } = this.state;
     this.setState({
       step: step + 1
+    });
+
+    firestore.collection("testCollection2").doc("collection").set({
+      name: "Brady",
+      state: "ON",
+      country: "CA"
+    })
+    .then(function() {
+        console.log("Document successfully written!");
+    })
+    .catch(function(error) {
+        console.error("Error writing document: ", error);
     });
   };
 

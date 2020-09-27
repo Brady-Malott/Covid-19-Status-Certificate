@@ -4,7 +4,7 @@ import Button from '@material-ui/core/Button';
 import { makeStyles } from '@material-ui/core/styles';
 import {auth, firestore, firebase} from './firebase.js';
 import CovidForm from './components/CovidForm';
-import UserForm from './components_test/UserForm';
+import UserForm from './components_test/UserForm.js';
 
 //If this is giving you an error, do yarn install <OR> yarn add @material-ui/icons
 import ExitToApp from '@material-ui/icons/ExitToApp';
@@ -34,6 +34,9 @@ function App() {
       <section>
         {user ? <UserForm /> : <SignIn />}
       </section>
+
+      {/* Test Logo */}
+      <img src={require('./covid_wallet_logo.png')} alt="logo" id="main_logo"/>
     </div>
   );
 }
