@@ -28,15 +28,13 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        
+        {/* Test Logo */}
+        <img src={require('./covid_wallet_logo.png')} alt="logo" id="main_logo"/>
       </header>
 
       <section>
         {user ? <UserForm /> : <SignIn />}
       </section>
-
-      {/* Test Logo */}
-      <img src={require('./covid_wallet_logo.png')} alt="logo" id="main_logo"/>
     </div>
   );
 }

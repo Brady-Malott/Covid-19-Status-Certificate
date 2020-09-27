@@ -24,61 +24,15 @@ export class ThirdForm extends Component {
 
   render() {
     const { values, handleChange } = this.props;
+    const severities = ['none', 'moderate', 'severe'];
 
     return (
       <MuiThemeProvider>
-        <>
-          {/* <Dialog
-            open
-            fullWidth
-            maxWidth='sm'
-          >
-            <AppBar title="Enter Personal Details" />
-            <TextField
-              placeholder="Enter Your Occupation"
-              label="Occupation"
-              onChange={handleChange('occupation')}
-              defaultValue={values.occupation}
-              margin="normal"
-              fullWidth
-            />
-            <br />
-            <TextField
-              placeholder="Enter Your City"
-              label="City"
-              onChange={handleChange('city')}
-              defaultValue={values.city}
-              margin="normal"
-              fullWidth
-            />
-            <br />
-            <TextField
-              placeholder="Enter Your Bio"
-              label="Bio"
-              onChange={handleChange('bio')}
-              defaultValue={values.bio}
-              margin="normal"
-              fullWidth
-            />
-            <br />
-
-            <Button
-              color="secondary"
-              variant="contained"
-              onClick={this.back}
-            >Back</Button>
-
-            <Button
-              color="primary"
-              variant="contained"
-              onClick={this.continue}
-            >Continue</Button>
-          </Dialog> */}
-
+        <div className="container mt-2">
           <Typography variant="h4" gutterBottom>
             Symptom Info
           </Typography>
-          <Typography variant="h6" gutterBottom>
+          <Typography variant="h5" gutterBottom>
             3. Covid-19 Episode
           </Typography>
           <Grid container spacing={1}>
@@ -99,9 +53,9 @@ export class ThirdForm extends Component {
                 onChange={handleChange('requiredHospitalization')}
                 value={values.requiredHospitalization}
               >
-                <MenuItem value="1">Yes</MenuItem>
-                <MenuItem value="2">No</MenuItem>
-                <MenuItem value="3">I don't believe I had an episode</MenuItem>
+                <MenuItem value="Yes">Yes</MenuItem>
+                <MenuItem value="No">No</MenuItem>
+                <MenuItem value="I don't believe I had an episode">I don't believe I had an episode</MenuItem>
               </Select>
             </Grid>
             <Grid item xs={12} sm={6}>
@@ -138,9 +92,9 @@ export class ThirdForm extends Component {
                 onChange={handleChange('q2_1')}
                 value={values.q2_1}
               >
-                <MenuItem value="1">None</MenuItem>
-                <MenuItem value="2">Moderate</MenuItem>
-                <MenuItem value="3">Severe</MenuItem>
+                <MenuItem value={severities[0]}>None</MenuItem>
+                <MenuItem value={severities[1]}>Moderate</MenuItem>
+                <MenuItem value={severities[2]}>Severe</MenuItem>
               </Select>
             </Grid>
             <Grid item xs={12} sm={6}>
@@ -151,9 +105,9 @@ export class ThirdForm extends Component {
                 onChange={handleChange('q2_2')}
                 value={values.q2_2}
               >
-                <MenuItem value="1">None</MenuItem>
-                <MenuItem value="2">Moderate</MenuItem>
-                <MenuItem value="3">Severe</MenuItem>
+                <MenuItem value={severities[0]}>None</MenuItem>
+                <MenuItem value={severities[1]}>Moderate</MenuItem>
+                <MenuItem value={severities[2]}>Severe</MenuItem>
               </Select>
             </Grid>
             <Grid item xs={12} sm={6}>
@@ -164,9 +118,9 @@ export class ThirdForm extends Component {
                 onChange={handleChange('q2_3')}
                 value={values.q2_3}
               >
-                <MenuItem value="1">None</MenuItem>
-                <MenuItem value="2">Moderate</MenuItem>
-                <MenuItem value="3">Severe</MenuItem>
+                <MenuItem value={severities[0]}>None</MenuItem>
+                <MenuItem value={severities[1]}>Moderate</MenuItem>
+                <MenuItem value={severities[2]}>Severe</MenuItem>
               </Select>
             </Grid>
             <Grid item xs={12} sm={6}>
@@ -177,9 +131,9 @@ export class ThirdForm extends Component {
                 onChange={handleChange('q2_4')}
                 value={values.q2_4}
               >
-                <MenuItem value="1">None</MenuItem>
-                <MenuItem value="2">Moderate</MenuItem>
-                <MenuItem value="3">Severe</MenuItem>
+                <MenuItem value={severities[0]}>None</MenuItem>
+                <MenuItem value={severities[1]}>Moderate</MenuItem>
+                <MenuItem value={severities[2]}>Severe</MenuItem>
               </Select>
             </Grid>
             <Grid item xs={12} sm={6}>
@@ -190,9 +144,9 @@ export class ThirdForm extends Component {
                 onChange={handleChange('q2_5')}
                 value={values.q2_5}
               >
-                <MenuItem value="1">None</MenuItem>
-                <MenuItem value="2">Moderate</MenuItem>
-                <MenuItem value="3">Severe</MenuItem>
+                <MenuItem value={severities[0]}>None</MenuItem>
+                <MenuItem value={severities[1]}>Moderate</MenuItem>
+                <MenuItem value={severities[2]}>Severe</MenuItem>
               </Select>
             </Grid>
             <Grid item xs={12} sm={6}>
@@ -203,9 +157,9 @@ export class ThirdForm extends Component {
                 onChange={handleChange('q2_6')}
                 value={values.q2_6}
               >
-                <MenuItem value="1">None</MenuItem>
-                <MenuItem value="2">Moderate</MenuItem>
-                <MenuItem value="3">Severe</MenuItem>
+                <MenuItem value={severities[0]}>None</MenuItem>
+                <MenuItem value={severities[1]}>Moderate</MenuItem>
+                <MenuItem value={severities[2]}>Severe</MenuItem>
               </Select>
             </Grid>
             <Grid item xs={12} sm={6}>
@@ -216,9 +170,9 @@ export class ThirdForm extends Component {
                 onChange={handleChange('q2_7')}
                 value={values.q2_7}
               >
-                <MenuItem value="1">None</MenuItem>
-                <MenuItem value="2">Moderate</MenuItem>
-                <MenuItem value="3">Severe</MenuItem>
+                <MenuItem value={severities[0]}>None</MenuItem>
+                <MenuItem value={severities[1]}>Moderate</MenuItem>
+                <MenuItem value={severities[2]}>Severe</MenuItem>
               </Select>
             </Grid>
             <Grid item xs={12} sm={6}>
@@ -229,9 +183,9 @@ export class ThirdForm extends Component {
                 onChange={handleChange('q2_8')}
                 value={values.q2_8}
               >
-                <MenuItem value="1">None</MenuItem>
-                <MenuItem value="2">Moderate</MenuItem>
-                <MenuItem value="3">Severe</MenuItem>
+                <MenuItem value={severities[0]}>None</MenuItem>
+                <MenuItem value={severities[1]}>Moderate</MenuItem>
+                <MenuItem value={severities[2]}>Severe</MenuItem>
               </Select>
             </Grid>
             <Grid item xs={12} sm={6}>
@@ -242,9 +196,9 @@ export class ThirdForm extends Component {
                 onChange={handleChange('q2_9')}
                 value={values.q2_9}
               >
-                <MenuItem value="1">None</MenuItem>
-                <MenuItem value="2">Moderate</MenuItem>
-                <MenuItem value="3">Severe</MenuItem>
+                <MenuItem value={severities[0]}>None</MenuItem>
+                <MenuItem value={severities[1]}>Moderate</MenuItem>
+                <MenuItem value={severities[2]}>Severe</MenuItem>
               </Select>
             </Grid>
             <Grid item xs={12} sm={6}>
@@ -255,9 +209,9 @@ export class ThirdForm extends Component {
                 onChange={handleChange('q2_10')}
                 value={values.q2_10}
               >
-                <MenuItem value="1">None</MenuItem>
-                <MenuItem value="2">Moderate</MenuItem>
-                <MenuItem value="3">Severe</MenuItem>
+                <MenuItem value={severities[0]}>None</MenuItem>
+                <MenuItem value={severities[1]}>Moderate</MenuItem>
+                <MenuItem value={severities[2]}>Severe</MenuItem>
               </Select>
             </Grid>
             <Grid item xs={12} sm={6}>
@@ -268,9 +222,9 @@ export class ThirdForm extends Component {
                 onChange={handleChange('q2_11')}
                 value={values.q2_11}
               >
-                <MenuItem value="1">None</MenuItem>
-                <MenuItem value="2">Moderate</MenuItem>
-                <MenuItem value="3">Severe</MenuItem>
+                <MenuItem value={severities[0]}>None</MenuItem>
+                <MenuItem value={severities[1]}>Moderate</MenuItem>
+                <MenuItem value={severities[2]}>Severe</MenuItem>
               </Select>
             </Grid>
           </Grid>
@@ -278,13 +232,15 @@ export class ThirdForm extends Component {
             color="secondary"
             variant="contained"
             onClick={this.back}
+            className="button-margin"
           >Back</Button>
           <Button
             color="primary"
             variant="contained"
             onClick={this.continue}
+            className="button-margin"
           >Continue</Button>
-        </>
+        </div>
       </MuiThemeProvider>
     );
   }

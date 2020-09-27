@@ -13,17 +13,20 @@ body {
 .container {
   width: 80%;
   margin: auto;
-  height: 100px;
   background: white;
+}
+
+.mt-2 {
+  margin-top: 20px;
+}
+
+.button-margin {
+  margin: 20px !important;
 }
 
 /* Other styles */
 .App-header {
-  background: #f4f4f4;
-}
-
-.test {
-  /* background: blue; */
+  background: white;
 }
 
 #signInButton {

@@ -27,58 +27,11 @@ export class SecondForm extends Component {
 
     return (
       <MuiThemeProvider>
-        <>
-          {/* <Dialog
-            open
-            fullWidth
-            maxWidth='sm'
-          >
-            <AppBar title="Enter Personal Details" />
-            <TextField
-              placeholder="Enter Your Occupation"
-              label="Occupation"
-              onChange={handleChange('occupation')}
-              defaultValue={values.occupation}
-              margin="normal"
-              fullWidth
-            />
-            <br />
-            <TextField
-              placeholder="Enter Your City"
-              label="City"
-              onChange={handleChange('city')}
-              defaultValue={values.city}
-              margin="normal"
-              fullWidth
-            />
-            <br />
-            <TextField
-              placeholder="Enter Your Bio"
-              label="Bio"
-              onChange={handleChange('bio')}
-              defaultValue={values.bio}
-              margin="normal"
-              fullWidth
-            />
-            <br />
-
-            <Button
-              color="secondary"
-              variant="contained"
-              onClick={this.back}
-            >Back</Button>
-
-            <Button
-              color="primary"
-              variant="contained"
-              onClick={this.continue}
-            >Continue</Button>
-          </Dialog> */}
-
+        <div className="container mt-2">
           <Typography variant="h4" gutterBottom>
-            Symptom Info
+            Precautions and Test Results
           </Typography>
-          <Typography variant="h6" gutterBottom>
+          <Typography variant="h5" gutterBottom>
             1. In the past 14 days, have you:
           </Typography>
           <Grid container spacing={1}>
@@ -122,11 +75,9 @@ export class SecondForm extends Component {
               />
               <p style={{display: "inline"}}>congregated in groups of 15 or more people</p>
             </Grid>
-            <Grid item xs={12}>
-              <Typography variant="h6" gutterBottom>
-                2. Covid-19 PCR Test (Nasal swab):
-              </Typography>
-            </Grid>
+            <Typography variant="h5" gutterBottom>
+              2. Covid-19 PCR Test (Nasal swab):
+            </Typography>
             <Grid item xs={12}>
               <Checkbox
                 color="primary"
@@ -146,9 +97,9 @@ export class SecondForm extends Component {
                 onChange={handleChange('testResult')}
                 value={values.testResult}
               >
-                <MenuItem value="1">Positive</MenuItem>
-                <MenuItem value="2">Negative</MenuItem>
-                <MenuItem value="3">I haven't received results</MenuItem>
+                <MenuItem value="Positive">Positive</MenuItem>
+                <MenuItem value="Negative">Negative</MenuItem>
+                <MenuItem value="I haven't received results">I haven't received results</MenuItem>
               </Select>
             </Grid>}
             {values.hasTested && 
@@ -171,13 +122,15 @@ export class SecondForm extends Component {
             color="secondary"
             variant="contained"
             onClick={this.back}
+            className="button-margin"
           >Back</Button>
           <Button
             color="primary"
             variant="contained"
             onClick={this.continue}
+            className="button-margin"
           >Continue</Button>
-        </>
+        </div>
       </MuiThemeProvider>
     );
   }

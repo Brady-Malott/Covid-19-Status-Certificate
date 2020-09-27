@@ -8,6 +8,7 @@ import Select from "@material-ui/core/Select";
 import MenuItem from "@material-ui/core/MenuItem";
 import Grid from "@material-ui/core/Grid";
 import InputLabel from "@material-ui/core/InputLabel";
+import { Typography } from '@material-ui/core';
 
 export class FirstForm extends Component {
   continue = e => {
@@ -19,8 +20,11 @@ export class FirstForm extends Component {
     const { values, handleChange } = this.props;
     return (
       <MuiThemeProvider>
-        <>
-          <Grid container spacing={3} className="test">
+        <div className="container mt-2">
+          <Typography variant="h4" gutterBottom>
+            Demographic Info
+          </Typography>
+          <Grid container spacing={3}>
             <Grid item xs={12} sm={6}>
               <InputLabel id="work-sector">Work Sector</InputLabel>
               <Select
@@ -30,14 +34,14 @@ export class FirstForm extends Component {
                 onChange={handleChange('workSector')}
                 value={values.workSector}
               >
-                <MenuItem value="1">Health care and social assistance</MenuItem>
-                <MenuItem value="2">Educational services</MenuItem>
-                <MenuItem value="3">Accommodation and food services</MenuItem>
-                <MenuItem value="4">Finance and insurance, real estate, rental, and leasing</MenuItem>
-                <MenuItem value="5">Manufacturing</MenuItem>
-                <MenuItem value="6">Wholesale trade, retail trade</MenuItem>
-                <MenuItem value="7">Professional, scientific, and technology services</MenuItem>
-                <MenuItem value="8">Other</MenuItem>
+                <MenuItem value="Health care and social assistance">Health care and social assistance</MenuItem>
+                <MenuItem value="Educational services">Educational services</MenuItem>
+                <MenuItem value="Accommodation and food services">Accommodation and food services</MenuItem>
+                <MenuItem value="Finance and insurance, real estate, rental, and leasing">Finance and insurance, real estate, rental, and leasing</MenuItem>
+                <MenuItem value="Manufacturing">Manufacturing</MenuItem>
+                <MenuItem value="Wholesale trade, retail trade">Wholesale trade, retail trade</MenuItem>
+                <MenuItem value="Professional, scientific, and technology services">Professional, scientific, and technology services</MenuItem>
+                <MenuItem value="Other">Other</MenuItem>
               </Select>
             </Grid>
             <Grid item xs={12} sm={6}>
@@ -61,9 +65,9 @@ export class FirstForm extends Component {
                 onChange={handleChange('gender')}
                 value={values.gender}
               >
-                <MenuItem value="1">Male</MenuItem>
-                <MenuItem value="2">Female</MenuItem>
-                <MenuItem value="3">Other</MenuItem>
+                <MenuItem value="Male">Male</MenuItem>
+                <MenuItem value="Female">Female</MenuItem>
+                <MenuItem value="Other">Other</MenuItem>
               </Select>
             </Grid>
             <Grid item xs={12} sm={6}>
@@ -75,12 +79,12 @@ export class FirstForm extends Component {
                 onChange={handleChange('race')}
                 value={values.race}
               >
-                <MenuItem value="1">White</MenuItem>
-                <MenuItem value="2">Arab</MenuItem>
-                <MenuItem value="3">Filipino</MenuItem>
-                <MenuItem value="4">Chinese</MenuItem>
-                <MenuItem value="5">Black</MenuItem>
-                <MenuItem value="6">Other</MenuItem>
+                <MenuItem value="White">White</MenuItem>
+                <MenuItem value="Arab">Arab</MenuItem>
+                <MenuItem value="Filipino">Filipino</MenuItem>
+                <MenuItem value="Chinese">Chinese</MenuItem>
+                <MenuItem value="Black">Black</MenuItem>
+                <MenuItem value="Other">Other</MenuItem>
               </Select>
             </Grid>
           </Grid>
@@ -88,8 +92,9 @@ export class FirstForm extends Component {
               color="primary"
               variant="contained"
               onClick={this.continue}
+              className="button-margin"
             >Continue</Button>
-        </>
+        </div>
       </MuiThemeProvider>
     );
   }
