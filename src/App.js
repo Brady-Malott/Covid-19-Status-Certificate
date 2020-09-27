@@ -8,7 +8,6 @@ import Details from './components/Details.js';
 
 //If this is giving you an error, do yarn install <OR> yarn add @material-ui/icons
 import ExitToApp from '@material-ui/icons/ExitToApp';
-import TimeToLeaveRounded from '@material-ui/icons/TimeToLeaveRounded';
 
 // React-Firebase hooks
 import { useAuthState } from 'react-firebase-hooks/auth';
