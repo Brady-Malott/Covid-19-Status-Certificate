@@ -130,7 +130,6 @@ export class UserForm extends Component {
 
   // Handle fields change
   handleChange = input => e => {
-    console.log(this.state);
     // Different measures for changing checkboxes, dates, and other fields
     switch (e.target.type) {
       case 'checkbox':
@@ -139,7 +138,6 @@ export class UserForm extends Component {
       default:
         this.setState({ [input]: e.target.value });
     }
-    // console.log(this.state);
   };
 
   render() {

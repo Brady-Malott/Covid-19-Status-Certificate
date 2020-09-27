@@ -1,12 +1,15 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './App.css';
 import Button from '@material-ui/core/Button';
+import TextField from '@material-ui/core/TextField'
+import Grid from "@material-ui/core/Grid";
 // import { makeStyles } from '@material-ui/core/styles';
 import {auth, firestore, firebase} from './firebase.js';
 import UserForm from './components/UserForm.js';
 
 //If this is giving you an error, do yarn install <OR> yarn add @material-ui/icons
 import ExitToApp from '@material-ui/icons/ExitToApp';
+import TimeToLeaveRounded from '@material-ui/icons/TimeToLeaveRounded';
 
 // React-Firebase hooks
 import { useAuthState } from 'react-firebase-hooks/auth';
@@ -27,12 +30,14 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
+        <CertIdSearch />
         {/* Test Logo */}
         <img src={require('./covid_wallet_logo.png')} alt="logo" id="main_logo"/>
+        {user ? <SignOut /> : <SignIn />}
       </header>
 
       <section>
-        {user ? <UserForm /> : <SignIn />}
+        {user && <UserForm />}
       </section>
     </div>
   );
@@ -50,10 +55,34 @@ function SignIn() {
   )
 }
 
-// function SignOut() {
-//   return auth.currentUser && (
-//     <button class={`sign-out ${auth.currentUser ? 'show' : 'hide'}`} onClick={() => auth.signOut()}>Sign Out</button>
-//   )
-// }
+function SignOut() {
+  return auth.currentUser && (
+    <Button id="signOutButton" onClick={() => auth.signOut()}> <TimeToLeaveRounded /> Sign Out</Button>
+  )
+}
+
+function CertIdSearch() {
+
+  const [queryString, setQueryString] = useState('');
+
+  // Query the database
+  const search = (e) => {
+    e.preventDefault();
+    console.log(queryString);
+
+    setQueryString('');
+  }
+
+  return (
+      <form noValidate onSubmit={search} className="align-query-tool container">
+        <TextField 
+          placeholder="Enter a certificate id"
+          fullWidth
+          value={queryString}
+          onChange={(e) => setQueryString(e.target.value)}
+        />
+      </form>  
+  )
+}
 
 export default App;
