@@ -36,6 +36,40 @@ export class UserForm extends Component {
     q2_11: '',
   };
 
+  // Proceed to beginning of form
+  startNewForm = () => {
+    const { step } = this.state;
+    this.setState({
+      step: 1,
+      workSector: '',
+      age: '',
+      gender: '',
+      race: '',
+      q1_1: false,
+      q1_2: false,
+      q1_3: false,
+      q1_4: false,
+      q1_5: false,
+      hasTested: false,
+      testResult: '',
+      testDate: new Date(),
+      hadEpisode: false,
+      requiredHospitalization: '',
+      symptomsDate: new Date(),
+      q2_1: '',
+      q2_2: '',
+      q2_3: '',
+      q2_4: '',
+      q2_5: '',
+      q2_6: '',
+      q2_7: '',
+      q2_8: '',
+      q2_9: '',
+      q2_10: '',
+      q2_11: '',
+    });
+  }
+
   // Proceed to next step
   nextStep = () => {
     const { step } = this.state;
@@ -70,6 +104,7 @@ export class UserForm extends Component {
       step: step + 1
     });
   };
+
   // Handle fields change
   handleChange = input => e => {
     console.log(this.state);
@@ -120,7 +155,7 @@ export class UserForm extends Component {
         );
       case 4:
         return <Certificate 
-          nextStep={1}
+          nextStep={this.startNewForm}
         />;
       default:
         (console.log('This is a multi-step form built with React.'))

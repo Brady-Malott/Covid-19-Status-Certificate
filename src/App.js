@@ -3,7 +3,6 @@ import './App.css';
 import Button from '@material-ui/core/Button';
 import { makeStyles } from '@material-ui/core/styles';
 import {auth, firestore, firebase} from './firebase.js';
-import CovidForm from './components/CovidForm';
 import UserForm from './components_test/UserForm.js';
 
 //If this is giving you an error, do yarn install <OR> yarn add @material-ui/icons
@@ -13,13 +12,13 @@ import ExitToApp from '@material-ui/icons/ExitToApp';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useCollectionData } from 'react-firebase-hooks/firestore';
 
-const useStyles = makeStyles((theme) => ({
-  root: {
-    '& > *': {
-      margin: theme.spacing(1),
-    },
-  },
-}));
+// const useStyles = makeStyles((theme) => ({
+//   root: {
+//     '& > *': {
+//       margin: theme.spacing(1),
+//     },
+//   },
+// }));
 
 function App() {
 
@@ -51,10 +50,10 @@ function SignIn() {
   )
 }
 
-function SignOut() {
-  return auth.currentUser && (
-    <button class={`sign-out ${auth.currentUser ? 'show' : 'hide'}`} onClick={() => auth.signOut()}>Sign Out</button>
-  )
-}
+// function SignOut() {
+//   return auth.currentUser && (
+//     <button class={`sign-out ${auth.currentUser ? 'show' : 'hide'}`} onClick={() => auth.signOut()}>Sign Out</button>
+//   )
+// }
 
 export default App;
