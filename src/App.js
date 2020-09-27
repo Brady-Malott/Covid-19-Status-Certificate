@@ -6,6 +6,7 @@ import Grid from "@material-ui/core/Grid";
 // import { makeStyles } from '@material-ui/core/styles';
 import {auth, firestore, firebase} from './firebase.js';
 import UserForm from './components/UserForm.js';
+import Details from './components/Details.js';
 
 //If this is giving you an error, do yarn install <OR> yarn add @material-ui/icons
 import ExitToApp from '@material-ui/icons/ExitToApp';
@@ -26,16 +27,51 @@ import { useCollectionData } from 'react-firebase-hooks/firestore';
 function App() {
 
   const [user] = useAuthState(auth);
+  const [hasQuery, setHasQuery] = useState(false);
+  const [queryString, setQueryString] = useState('');
+
+  let result;
+
+  // Query the database
+  const search = (e) => {
+    e.preventDefault();
+
+    const query = firestore.collection("testUsers2").where("cert_uuid", "==", queryString);
+
+    query
+      .get()
+      .then((querySnapshot) => {
+        // Take the first result from the query (there should only be one)
+        querySnapshot.forEach((doc) => {
+          result = doc.data();
+          console.log(result);
+          setHasQuery(!hasQuery);
+        });
+      }).catch((error) => {
+        console.log("Error getting documents: ", error);
+      });
+
+    setQueryString('');
+  }
 
   return (
     <div className="App">
       <header className="App-header">
-        <CertIdSearch />
+      <form noValidate onSubmit={search} className="align-query-tool container">
+        <TextField 
+          placeholder="Enter a certificate id"
+          fullWidth
+          value={queryString}
+          onChange={(e) => setQueryString(e.target.value)}
+        />
+      </form>
         {/* Test Logo */}
         <img src={require('./covid_wallet_logo.png')} alt="logo" id="main_logo"/>
         {user ? <SignOut /> : <SignIn />}
       </header>
-
+      <section>
+        {hasQuery && <Details values={result} />}
+      </section>
       <section>
         {user && <UserForm />}
       </section>
@@ -58,43 +94,6 @@ function SignIn() {
 function SignOut() {
   return auth.currentUser && (
     <Button id="signOutButton" onClick={() => auth.signOut()}> <TimeToLeaveRounded /> Sign Out</Button>
-  )
-}
-
-function CertIdSearch() {
-
-  const [queryString, setQueryString] = useState('');
-
-  // Query the database
-  const search = (e) => {
-    e.preventDefault();
-    console.log(queryString);
-
-    const query = firestore.collection("testUsers2").where("cert_uuid", "==", queryString);
-
-    query
-      .get()
-      .then((querySnapshot) => {
-        querySnapshot.forEach((doc) => {
-          // doc.id is the uid and doc.data() is all of data in this user's document
-          console.log(doc.id, " => ", doc.data());
-        });
-      }).catch((error) => {
-        console.log("Error getting documents: ", error);
-      });
-
-    setQueryString('');
-  }
-
-  return (
-      <form noValidate onSubmit={search} className="align-query-tool container">
-        <TextField 
-          placeholder="Enter a certificate id"
-          fullWidth
-          value={queryString}
-          onChange={(e) => setQueryString(e.target.value)}
-        />
-      </form>  
   )
 }
 
