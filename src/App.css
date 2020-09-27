@@ -16,6 +16,14 @@ body {
   background: white;
 }
 
+.show {
+  display: block;
+}
+
+.hide {
+  display: none;
+}
+
 .mt-2 {
   margin-top: 20px;
 }
@@ -27,9 +35,19 @@ body {
 /* Other styles */
 .App-header {
   background: white;
+  width: 80%;
+  height: 300px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 10px;
 }
 
-#signInButton {
+.align-query-tool {
+  align-self: center;
+}
+
+#signInButton, #signOutButton {
   margin:auto;
   display:block;
   background: #4285F4;
@@ -37,8 +55,8 @@ body {
 }
 
 #main_logo {
-  width: 20%;
-  height: 20%;
+  width: 100%;
+  height: 100%;
   display: block;
   margin-left: auto;
   margin-right: auto;

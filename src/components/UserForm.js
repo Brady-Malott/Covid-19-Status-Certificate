@@ -40,7 +40,6 @@ export class UserForm extends Component {
 
   // Proceed to beginning of form
   startNewForm = () => {
-    const { step } = this.state;
     this.setState({
       step: 1,
       workSector: '',
