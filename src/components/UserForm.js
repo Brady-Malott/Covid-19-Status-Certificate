@@ -35,7 +35,7 @@ export class UserForm extends Component {
     q2_9: '',
     q2_10: '',
     q2_11: '',
-    cert_uuid: 'blank2',
+    cert_uuid: '',
   };
 
   // Proceed to beginning of form
@@ -68,6 +68,7 @@ export class UserForm extends Component {
       q2_9: '',
       q2_10: '',
       q2_11: '',
+      cert_uuid: '',
     });
   }
 
@@ -111,46 +112,57 @@ export class UserForm extends Component {
 
   handleCertUuid = input => {
     console.log("Hey I'm in this function!");
-    // this.setState({ [input]: });
-    // console.log(this.state.cert_uuid);
 
-    //write to document
-    firestore.collection("testUsers2").doc(firebase.auth().currentUser.uid).set({
-      step: this.state.step,
-      workSector: this.state.workSector,
-      age: this.state.age,
-      gender: this.state.gender,
-      race: this.state.race,
-      q1_1: this.state.q1_1,
-      q1_2: this.state.q1_2,
-      q1_3: this.state.q1_3,
-      q1_4: this.state.q1_4,
-      q1_5: this.state.q1_5,
-      hasTested: this.state.hasTested,
-      testResult: this.state.testResult,
-      testDate: this.state.testDate,
-      hadEpisode: this.state.hadEpisode,
-      requiredHospitalization: this.state.requiredHospitalization,
-      symptomsDate: this.state.symptomsDate,
-      q2_1: this.state.q2_1,
-      q2_2: this.state.q2_2,
-      q2_3: this.state.q2_3,
-      q2_4: this.state.q2_4,
-      q2_5: this.state.q2_5,
-      q2_6: this.state.q2_6,
-      q2_7: this.state.q2_7,
-      q2_8: this.state.q2_8,
-      q2_9: this.state.q2_9,
-      q2_10: this.state.q2_10,
-      q2_11: this.state.q2_11,
-      cert_uuid: uuidv4(),
-    })
-    .then(function() {
+    console.log(this.state.cert_uuid);
+
+    this.setState({
+      cert_uuid: uuidv4()
+    }, () => {
+      //write to document
+      firestore.collection("testUsers2").doc(firebase.auth().currentUser.uid).set({
+        step: this.state.step,
+        workSector: this.state.workSector,
+        age: this.state.age,
+        gender: this.state.gender,
+        race: this.state.race,
+        q1_1: this.state.q1_1,
+        q1_2: this.state.q1_2,
+        q1_3: this.state.q1_3,
+        q1_4: this.state.q1_4,
+        q1_5: this.state.q1_5,
+        hasTested: this.state.hasTested,
+        testResult: this.state.testResult,
+        testDate: this.state.testDate,
+        hadEpisode: this.state.hadEpisode,
+        requiredHospitalization: this.state.requiredHospitalization,
+        symptomsDate: this.state.symptomsDate,
+        q2_1: this.state.q2_1,
+        q2_2: this.state.q2_2,
+        q2_3: this.state.q2_3,
+        q2_4: this.state.q2_4,
+        q2_5: this.state.q2_5,
+        q2_6: this.state.q2_6,
+        q2_7: this.state.q2_7,
+        q2_8: this.state.q2_8,
+        q2_9: this.state.q2_9,
+        q2_10: this.state.q2_10,
+        q2_11: this.state.q2_11,
+        cert_uuid: this.state.cert_uuid,
+      })
+      .then(() => {
         console.log("Document successfully written!");
-    })
-    .catch(function(error) {
+        
+        this.nextStep();
+      })
+      .catch(function(error) {
         console.error("Error writing document: ", error);
+      });
     });
+
+    console.log(this.state.cert_uuid);
+
+    // this.setState({ [input]: });
+    // console.log(this.state.cert_uuid);    
   };
 
   render() {
@@ -159,6 +171,7 @@ export class UserForm extends Component {
     const f1Values = { workSector, age, gender, race };
     const f2Values = { q1_1, q1_2, q1_3, q1_4, q1_5, hasTested, testResult, testDate };
     const f3Values = { hadEpisode, requiredHospitalization, symptomsDate, q2_1, q2_2, q2_3, q2_4, q2_5, q2_6, q2_7, q2_8, q2_9, q2_10, q2_11, cert_uuid };
+    const certValues = { cert_uuid };
 
     switch (step) {
       case 1:
@@ -189,9 +202,12 @@ export class UserForm extends Component {
           />
         );
       case 4:
-        return <Certificate 
+        return (
+        <Certificate 
           nextStep={this.startNewForm}
-        />;
+          values={certValues}
+        />
+        );
       default:
         (console.log('This is a multi-step form built with React.'))
     }

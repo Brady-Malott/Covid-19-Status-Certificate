@@ -18,7 +18,7 @@ export class ThirdForm extends Component {
     console.log("In this continue thing");
     handleCertUuid('cert_uuid');
     console.log(values.cert_uuid);
-    this.props.nextStep();
+    // this.props.nextStep();
   };
 
   back = e => {

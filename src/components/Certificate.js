@@ -10,11 +10,15 @@ export class Certificate extends Component {
 
   render() {
 
+    const { cert_uuid } = this.props.values;
+
+    console.log(cert_uuid);
+
     return (
       <React.Fragment>
   
         <Typography variant="h1" gutterBottom align="center">
-          123456789 {/* we will eventually want this number to be granted by firebase*/}
+          {cert_uuid} {/* we will eventually want this number to be granted by firebase*/}
         </Typography>
       
         <Typography variant="h4" gutterBottom align="center">
@@ -29,7 +33,7 @@ export class Certificate extends Component {
             variant="contained"
             onClick={this.makeNew}
             className="button-margin"
-          >Continue</Button>
+          >Get new certificate</Button>
 
       </React.Fragment>
     );

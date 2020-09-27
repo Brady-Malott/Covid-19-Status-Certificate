@@ -70,6 +70,19 @@ function CertIdSearch() {
     e.preventDefault();
     console.log(queryString);
 
+    const query = firestore.collection("testUsers2").where("cert_uuid", "==", queryString);
+
+    query
+      .get()
+      .then((querySnapshot) => {
+        querySnapshot.forEach((doc) => {
+          // doc.id is the uid and doc.data() is all of data in this user's document
+          console.log(doc.id, " => ", doc.data());
+        });
+      }).catch((error) => {
+        console.log("Error getting documents: ", error);
+      });
+
     setQueryString('');
   }
 
