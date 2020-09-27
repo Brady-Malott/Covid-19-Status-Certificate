@@ -17,8 +17,8 @@ export class Certificate extends Component {
     return (
       <React.Fragment>
   
-        <Typography variant="h1" gutterBottom align="center">
-          {cert_uuid} {/* we will eventually want this number to be granted by firebase*/}
+        <Typography variant="h3" gutterBottom align="center">
+          {cert_uuid}
         </Typography>
       
         <Typography variant="h4" gutterBottom align="center">

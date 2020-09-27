@@ -27,10 +27,8 @@ import { useCollectionData } from 'react-firebase-hooks/firestore';
 function App() {
 
   const [user] = useAuthState(auth);
-  const [hasQuery, setHasQuery] = useState(false);
   const [queryString, setQueryString] = useState('');
-
-  let result;
+  const [result, setResult] = useState({});
 
   // Query the database
   const search = (e) => {
@@ -43,9 +41,9 @@ function App() {
       .then((querySnapshot) => {
         // Take the first result from the query (there should only be one)
         querySnapshot.forEach((doc) => {
-          result = doc.data();
-          console.log(result);
-          setHasQuery(!hasQuery);
+          // result = doc.data();
+          setResult(doc.data())
+          // console.log(result);
         });
       }).catch((error) => {
         console.log("Error getting documents: ", error);
@@ -70,7 +68,7 @@ function App() {
         {user ? <SignOut /> : <SignIn />}
       </header>
       <section>
-        {hasQuery && <Details values={result} />}
+        {result && <Details values={result} />}
       </section>
       <section>
         {user && <UserForm />}
