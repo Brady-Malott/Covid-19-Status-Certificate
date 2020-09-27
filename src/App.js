@@ -16,18 +16,11 @@ import TimeToLeaveRounded from '@material-ui/icons/TimeToLeaveRounded';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useCollectionData } from 'react-firebase-hooks/firestore';
 
-// const useStyles = makeStyles((theme) => ({
-//   root: {
-//     '& > *': {
-//       margin: theme.spacing(1),
-//     },
-//   },
-// }));
-
 function App() {
 
   const [user] = useAuthState(auth);
   const [queryString, setQueryString] = useState('');
+  const [hasQuery, setHasQuery] = useState(false);
   const [result, setResult] = useState({});
 
   // Query the database
@@ -42,7 +35,8 @@ function App() {
         // Take the first result from the query (there should only be one)
         querySnapshot.forEach((doc) => {
           // result = doc.data();
-          setResult(doc.data())
+          setResult(doc.data());
+          setHasQuery(true);
           // console.log(result);
         });
       }).catch((error) => {
@@ -68,8 +62,9 @@ function App() {
         {user ? <SignOut /> : <SignIn />}
       </header>
       <section>
-        {result && <Details values={result} />}
+        {hasQuery && <Details values={result} />}
       </section>
+      <hr></hr>
       <section>
         {user && <UserForm />}
       </section>

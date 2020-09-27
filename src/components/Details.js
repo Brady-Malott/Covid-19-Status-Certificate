@@ -17,6 +17,29 @@ export class Details extends Component {
         <Typography variant="h4" gutterBottom align="center">
           {values.cert_uuid}
         </Typography>
+        <Typography variant="h6" gutterBottom align="center">
+          Age: {values.age}
+        </Typography>
+        <Typography variant="h6" gutterBottom align="center">
+          Gender: {values.gender} 
+        </Typography>
+        <Typography variant="h6" gutterBottom align="center">
+          Ethnic Background: {values.race} 
+        </Typography>
+        <Typography variant="h6" gutterBottom align="center">
+          Workplace Sector: {values.workSector} 
+        </Typography>
+        <Typography variant="h6" gutterBottom align="center">
+          They have {values.hasTested ? 'been tested' : 'not been tested'}
+        </Typography>
+
+        {/* If the user has been tested, show the date and the result */}
+        {values.hasTested &&
+        <Typography variant="h6" gutterBottom align="center">
+          They tested {values.testResult} on: {values.testDate}  
+        </Typography>}
+
+
       </React.Fragment>
     );
   }
