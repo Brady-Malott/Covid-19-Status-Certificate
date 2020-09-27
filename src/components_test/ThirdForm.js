@@ -127,6 +127,8 @@ export class ThirdForm extends Component {
           <Typography variant="h6" gutterBottom>
             Please indicate the severity you experienced for each of the following symptoms.
           </Typography>    
+
+          {/* Below are the 11 symptom questions */}
           <Grid container spacing={1}>
             <Grid item xs={12} sm={6}>
               <InputLabel id="dry-cough">Dry cough</InputLabel>
@@ -155,12 +157,12 @@ export class ThirdForm extends Component {
               </Select>
             </Grid>
             <Grid item xs={12} sm={6}>
-              <InputLabel id="temperature">Temperature over 38 &deg;C</InputLabel>
+              <InputLabel id="loss-taste-smell">Loss of taste or smell</InputLabel>
               <Select
-                labelId="temperature"
+                labelId="loss-taste-smell"
                 fullWidth
-                onChange={handleChange('q2_2')}
-                value={values.q2_2}
+                onChange={handleChange('q2_3')}
+                value={values.q2_3}
               >
                 <MenuItem value="1">None</MenuItem>
                 <MenuItem value="2">Moderate</MenuItem>
@@ -168,12 +170,12 @@ export class ThirdForm extends Component {
               </Select>
             </Grid>
             <Grid item xs={12} sm={6}>
-              <InputLabel id="temperature">Temperature over 38 &deg;C</InputLabel>
+              <InputLabel id="fatigue">Fatigue, or feeling "under the weather"</InputLabel>
               <Select
-                labelId="temperature"
+                labelId="fatigue"
                 fullWidth
-                onChange={handleChange('q2_2')}
-                value={values.q2_2}
+                onChange={handleChange('q2_4')}
+                value={values.q2_4}
               >
                 <MenuItem value="1">None</MenuItem>
                 <MenuItem value="2">Moderate</MenuItem>
@@ -181,12 +183,12 @@ export class ThirdForm extends Component {
               </Select>
             </Grid>
             <Grid item xs={12} sm={6}>
-              <InputLabel id="temperature">Temperature over 38 &deg;C</InputLabel>
+              <InputLabel id="chills">Having the chills</InputLabel>
               <Select
-                labelId="temperature"
+                labelId="chills"
                 fullWidth
-                onChange={handleChange('q2_2')}
-                value={values.q2_2}
+                onChange={handleChange('q2_5')}
+                value={values.q2_5}
               >
                 <MenuItem value="1">None</MenuItem>
                 <MenuItem value="2">Moderate</MenuItem>
@@ -194,12 +196,12 @@ export class ThirdForm extends Component {
               </Select>
             </Grid>
             <Grid item xs={12} sm={6}>
-              <InputLabel id="temperature">Temperature over 38 &deg;C</InputLabel>
+              <InputLabel id="difficulty-breathing">Difficulty breathing, wheezing, or shortness of breath</InputLabel>
               <Select
-                labelId="temperature"
+                labelId="difficulty-breathing"
                 fullWidth
-                onChange={handleChange('q2_2')}
-                value={values.q2_2}
+                onChange={handleChange('q2_6')}
+                value={values.q2_6}
               >
                 <MenuItem value="1">None</MenuItem>
                 <MenuItem value="2">Moderate</MenuItem>
@@ -207,12 +209,12 @@ export class ThirdForm extends Component {
               </Select>
             </Grid>
             <Grid item xs={12} sm={6}>
-              <InputLabel id="temperature">Temperature over 38 &deg;C</InputLabel>
+              <InputLabel id="headaches">Headaches</InputLabel>
               <Select
-                labelId="temperature"
+                labelId="headaches"
                 fullWidth
-                onChange={handleChange('q2_2')}
-                value={values.q2_2}
+                onChange={handleChange('q2_7')}
+                value={values.q2_7}
               >
                 <MenuItem value="1">None</MenuItem>
                 <MenuItem value="2">Moderate</MenuItem>
@@ -220,12 +222,12 @@ export class ThirdForm extends Component {
               </Select>
             </Grid>
             <Grid item xs={12} sm={6}>
-              <InputLabel id="temperature">Temperature over 38 &deg;C</InputLabel>
+              <InputLabel id="joint-muscle-pain">Joint / Muscle Pain</InputLabel>
               <Select
-                labelId="temperature"
+                labelId="joint-muscle-pain"
                 fullWidth
-                onChange={handleChange('q2_2')}
-                value={values.q2_2}
+                onChange={handleChange('q2_8')}
+                value={values.q2_8}
               >
                 <MenuItem value="1">None</MenuItem>
                 <MenuItem value="2">Moderate</MenuItem>
@@ -233,12 +235,12 @@ export class ThirdForm extends Component {
               </Select>
             </Grid>
             <Grid item xs={12} sm={6}>
-              <InputLabel id="temperature">Temperature over 38 &deg;C</InputLabel>
+              <InputLabel id="abdominal-pain">Abdominal Pain or Digestive Issues</InputLabel>
               <Select
-                labelId="temperature"
+                labelId="abdominal-pain"
                 fullWidth
-                onChange={handleChange('q2_2')}
-                value={values.q2_2}
+                onChange={handleChange('q2_9')}
+                value={values.q2_9}
               >
                 <MenuItem value="1">None</MenuItem>
                 <MenuItem value="2">Moderate</MenuItem>
@@ -246,12 +248,12 @@ export class ThirdForm extends Component {
               </Select>
             </Grid>
             <Grid item xs={12} sm={6}>
-              <InputLabel id="temperature">Temperature over 38 &deg;C</InputLabel>
+              <InputLabel id="sore-throat">Sore Throat</InputLabel>
               <Select
-                labelId="temperature"
+                labelId="sore-throat"
                 fullWidth
-                onChange={handleChange('q2_2')}
-                value={values.q2_2}
+                onChange={handleChange('q2_10')}
+                value={values.q2_10}
               >
                 <MenuItem value="1">None</MenuItem>
                 <MenuItem value="2">Moderate</MenuItem>
@@ -259,12 +261,12 @@ export class ThirdForm extends Component {
               </Select>
             </Grid>
             <Grid item xs={12} sm={6}>
-              <InputLabel id="temperature">Temperature over 38 &deg;C</InputLabel>
+              <InputLabel id="watery-eyes">Eyes runny or watery</InputLabel>
               <Select
-                labelId="temperature"
+                labelId="watery-eyes"
                 fullWidth
-                onChange={handleChange('q2_2')}
-                value={values.q2_2}
+                onChange={handleChange('q2_11')}
+                value={values.q2_11}
               >
                 <MenuItem value="1">None</MenuItem>
                 <MenuItem value="2">Moderate</MenuItem>
