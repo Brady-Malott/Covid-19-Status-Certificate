@@ -12,8 +12,6 @@ export class Certificate extends Component {
 
     const { cert_uuid } = this.props.values;
 
-    console.log(cert_uuid);
-
     return (
       <React.Fragment>
   

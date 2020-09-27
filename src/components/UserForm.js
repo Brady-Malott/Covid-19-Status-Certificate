@@ -98,7 +98,6 @@ export class UserForm extends Component {
 
   // Handle fields change
   handleChange = input => e => {
-    console.log(this.state);
     // Different measures for changing checkboxes, dates, and other fields
     switch (e.target.type) {
       case 'checkbox':
@@ -107,14 +106,10 @@ export class UserForm extends Component {
       default:
         this.setState({ [input]: e.target.value });
     }
-    // console.log(this.state);
   };
 
-  handleCertUuid = input => {
-    console.log("Hey I'm in this function!");
-
-    console.log(this.state.cert_uuid);
-
+  handleCertUuid = () => {
+    // After the cert_uuid state is set, run the following function
     this.setState({
       cert_uuid: uuidv4()
     }, () => {
@@ -151,18 +146,12 @@ export class UserForm extends Component {
       })
       .then(() => {
         console.log("Document successfully written!");
-        
         this.nextStep();
       })
       .catch(function(error) {
         console.error("Error writing document: ", error);
       });
-    });
-
-    console.log(this.state.cert_uuid);
-
-    // this.setState({ [input]: });
-    // console.log(this.state.cert_uuid);    
+    });  
   };
 
   render() {

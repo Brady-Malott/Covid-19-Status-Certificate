@@ -69,7 +69,7 @@ export class FirstForm extends Component {
               </Select>
             </Grid>
             <Grid item xs={12} sm={6}>
-              <InputLabel id="race">Race</InputLabel>
+              <InputLabel id="race">Ethnic Background</InputLabel>
               <Select
                 labelId="race"
                 id="race-select"

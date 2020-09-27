@@ -2,8 +2,6 @@ import React, { useState } from 'react';
 import './App.css';
 import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField'
-import Grid from "@material-ui/core/Grid";
-// import { makeStyles } from '@material-ui/core/styles';
 import {auth, firestore, firebase} from './firebase.js';
 import UserForm from './components/UserForm.js';
 import Details from './components/Details.js';
@@ -14,7 +12,7 @@ import TimeToLeaveRounded from '@material-ui/icons/TimeToLeaveRounded';
 
 // React-Firebase hooks
 import { useAuthState } from 'react-firebase-hooks/auth';
-import { useCollectionData } from 'react-firebase-hooks/firestore';
+// import { useCollectionData } from 'react-firebase-hooks/firestore';
 
 function App() {
 

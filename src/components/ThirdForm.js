@@ -12,13 +12,9 @@ import MenuItem from '@material-ui/core/MenuItem';
 export class ThirdForm extends Component {
   continue = e => {
     e.preventDefault();
-    const { values, handleChange, handleCertUuid } = this.props;
-    // values.cert_uuid = '1000';
-    // handleChange('cert_uuid');
-    console.log("In this continue thing");
-    handleCertUuid('cert_uuid');
-    console.log(values.cert_uuid);
-    // this.props.nextStep();
+    const { handleCertUuid } = this.props;
+    
+    handleCertUuid();
   };
 
   back = e => {

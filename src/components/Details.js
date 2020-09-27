@@ -7,10 +7,9 @@ export class Details extends Component {
 
     const { values } = this.props;
 
-    console.log(this.props.values);
-
     return (
       <React.Fragment>
+
         <Typography variant="h3" gutterBottom align="center">
           Certificate For:
         </Typography>
@@ -38,7 +37,6 @@ export class Details extends Component {
         <Typography variant="h6" gutterBottom align="center">
           They tested {values.testResult} on: {values.testDate}  
         </Typography>}
-
 
       </React.Fragment>
     );
