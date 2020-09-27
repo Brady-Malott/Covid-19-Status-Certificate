@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
-import {auth, firestore, firebase} from '../firebase.js';
+import {firestore} from '../firebase.js';
 import FirstForm from './FirstForm';
 import SecondForm from './SecondForm';
 import ThirdForm from './ThirdForm';
+import Certificate from './Certificate';
 
 export class UserForm extends Component {
   state = {
@@ -42,34 +43,10 @@ export class UserForm extends Component {
       step: step + 1
     });
 
-    firestore.collection("testUsers1").doc(firebase.auth().currentUser.uid).set({
-      step: this.state.step,
-      workSector: this.state.workSector,
-      age: this.state.age,
-      gender: this.state.gender,
-      race: this.state.race,
-      q1_1: this.state.q1_1,
-      q1_2: this.state.q1_2,
-      q1_3: this.state.q1_3,
-      q1_4: this.state.q1_4,
-      q1_5: this.state.q1_5,
-      hasTested: this.state.hasTested,
-      testResult: this.state.testResult,
-      testDate: this.state.testDate,
-      hadEpisode: this.state.hadEpisode,
-      requiredHospitalization: this.state.requiredHospitalization,
-      symptomsDate: this.state.symptomsDate,
-      q2_1: this.state.q2_1,
-      q2_2: this.state.q2_2,
-      q2_3: this.state.q2_3,
-      q2_4: this.state.q2_4,
-      q2_5: this.state.q2_5,
-      q2_6: this.state.q2_6,
-      q2_7: this.state.q2_7,
-      q2_8: this.state.q2_8,
-      q2_9: this.state.q2_9,
-      q2_10: this.state.q2_10,
-      q2_11: this.state.q2_11,
+    firestore.collection("testCollection2").doc("collection").set({
+      name: "Brady",
+      state: "ON",
+      country: "CA"
     })
     .then(function() {
         console.log("Document successfully written!");
@@ -87,6 +64,12 @@ export class UserForm extends Component {
     });
   };
 
+  generate = () => {
+    const { step } = this.state;
+    this.setState({
+      step: step + 1
+    });
+  };
   // Handle fields change
   handleChange = input => e => {
     console.log(this.state);
@@ -135,8 +118,10 @@ export class UserForm extends Component {
             values={f3Values}
           />
         );
-      // case 4:
-      //   return <Success />;
+      case 4:
+        return <Certificate 
+          nextStep={1}
+        />;
       default:
         (console.log('This is a multi-step form built with React.'))
     }
