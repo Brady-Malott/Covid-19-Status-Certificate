@@ -24,7 +24,7 @@ function App() {
   const search = (e) => {
     e.preventDefault();
 
-    const query = firestore.collection("testUsers2").where("cert_uuid", "==", queryString);
+    const query = firestore.collection("users").where("cert_uuid", "==", queryString);
 
     query
       .get()

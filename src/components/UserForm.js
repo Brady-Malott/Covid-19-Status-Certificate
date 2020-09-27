@@ -78,7 +78,6 @@ export class UserForm extends Component {
     this.setState({
       step: step + 1
     });
-    console.log("In next state!!");
   };
 
   // Go back to prev step
@@ -114,7 +113,7 @@ export class UserForm extends Component {
       cert_uuid: uuidv4()
     }, () => {
       //write to document
-      firestore.collection("testUsers2").doc(firebase.auth().currentUser.uid).set({
+      firestore.collection("users").doc(firebase.auth().currentUser.uid).set({
         step: this.state.step,
         workSector: this.state.workSector,
         age: this.state.age,
@@ -199,6 +198,7 @@ export class UserForm extends Component {
         );
       default:
         (console.log('This is a multi-step form built with React.'))
+        return <h1>This is a multi-step form built with React</h1>
     }
   }
 }
