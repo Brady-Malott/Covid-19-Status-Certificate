@@ -29,13 +29,13 @@ export class Details extends Component {
           Workplace Sector: {values.workSector} 
         </Typography>
         <Typography variant="h6" gutterBottom align="center">
-          They have {values.hasTested ? 'been tested' : 'not been tested'}
+          {values.hasTested ? `They were tested on ${values.testDate ? values.testDate : 'date not given'}` : 'They have not been tested'}
         </Typography>
 
         {/* If the user has been tested, show the date and the result */}
         {values.hasTested &&
         <Typography variant="h6" gutterBottom align="center">
-          They tested {values.testResult} on: {values.testDate}  
+          Results: {values.testResult ? values.testResult : 'undefined'}
         </Typography>}
 
       </React.Fragment>
