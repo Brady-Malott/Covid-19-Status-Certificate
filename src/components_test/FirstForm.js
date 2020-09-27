@@ -62,7 +62,13 @@ export class FirstForm extends Component {
           <Grid container spacing={3} className="test">
             <Grid item xs={12} sm={6}>
               <InputLabel id="work-sector">Work Sector</InputLabel>
-              <Select labelId="work-sector" id="work-select" fullWidth>
+              <Select
+                labelId="work-sector"
+                id="work-select"
+                fullWidth
+                onChange={handleChange('workSector')}
+                value={values.workSector}
+              >
                 <MenuItem value="1">Health care and social assistance</MenuItem>
                 <MenuItem value="2">Educational services</MenuItem>
                 <MenuItem value="3">Accommodation and food services</MenuItem>
@@ -81,11 +87,19 @@ export class FirstForm extends Component {
                 name="age"
                 fullWidth
                 type="number"
+                onChange={handleChange('age')}
+                defaultValue={values.age}
               />
             </Grid>
             <Grid item xs={12} sm={6}>
               <InputLabel id="gender">Gender</InputLabel>
-              <Select labelId="gender" id="gender-select" fullWidth>
+              <Select
+                labelId="gender"
+                id="gender-select"
+                fullWidth
+                onChange={handleChange('gender')}
+                value={values.gender}
+              >
                 <MenuItem value="1">Male</MenuItem>
                 <MenuItem value="2">Female</MenuItem>
                 <MenuItem value="3">Other</MenuItem>
@@ -93,7 +107,13 @@ export class FirstForm extends Component {
             </Grid>
             <Grid item xs={12} sm={6}>
               <InputLabel id="race">Race</InputLabel>
-              <Select labelId="race" id="race-select" fullWidth>
+              <Select
+                labelId="race"
+                id="race-select"
+                fullWidth
+                onChange={handleChange('race')}
+                value={values.race}
+              >
                 <MenuItem value="1">White</MenuItem>
                 <MenuItem value="2">Arab</MenuItem>
                 <MenuItem value="3">Filipino</MenuItem>
