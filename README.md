@@ -1,4 +1,6 @@
-# COVID 19 Status Cerificate
+# COVID Wallet
+
+Devpost Link: https://devpost.com/software/covid-certificate-online
 
 Made for Borderhacks 2020
 
